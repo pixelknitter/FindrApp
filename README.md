@@ -1,4 +1,4 @@
-FinderApp
+FindrApp
 =========
 
 An app that utilizes Yelp APIs to bring you closer to finding what you need.
