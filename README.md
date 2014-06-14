@@ -24,7 +24,7 @@ Time spent: XX hours spent in total
 * [ ] The filters table should be organized into sections as in the mock.
 * [ ] You can use the default UISwitch for on/off states. Optional: implement a custom switch
 * [ ] Radius filter should expand as in the real Yelp app
-* [ ]Categories should show a subset of the full list with a "See All" row to expand. Category list is here: http://www.yelp.com/developers/documentation/category_list
+* [ ] Categories should show a subset of the full list with a "See All" row to expand. Category list is here: http://www.yelp.com/developers/documentation/category_list
 * [ ] Clicking on the "Search" button should dismiss the filters page and trigger the search w/ the new filter settings.
 
 ### Optional:
@@ -46,7 +46,8 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ### Pods
 
-* A Pod
+* AFNetworking
+* BDBOAuth1Manager
 
 ### APIs
 
