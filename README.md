@@ -48,11 +48,21 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 * AFNetworking
 * BDBOAuth1Manager
+* MBProgressHUD
+* POP
+* TSMessages
 
 ### APIs
 
 Yelp API
 
-### Reading
+### Further Reading
 
-TODO
+http://www.raywenderlich.com/55384/ios-7-best-practices-part-1
+http://www.yelp.com/developers/documentation/v2/search_api
+http://www.raywenderlich.com/5478/uiview-animation-tutorial-practical-recipes
+http://www.raywenderlich.com/73286/top-5-ios-7-animations
+
+### Credits
+
+[Filter designed by Niels Gesquiere from the Noun Project](http://www.thenounproject.com/megapixl/)
