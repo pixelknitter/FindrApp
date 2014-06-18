@@ -3,11 +3,7 @@ FindrApp
 
 An app that utilizes Yelp APIs to bring you closer to finding what you need.
 
-Time spent: XX hours spent in total
-
-## Instructions
-
-1. TODO
+Time spent: 20 hours spent in total
 
 ## User Stories
 
@@ -39,10 +35,6 @@ Walkthrough of all user stories:
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
-*Personal Notes:*
-
-
-
 ## Resources Used
 
 ### Pods
@@ -50,7 +42,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 * AFNetworking
 * BDBOAuth1Manager
 * MBProgressHUD
-* POP
+* POP **(Didn't Use)**
 * TSMessages
 
 ### APIs
@@ -67,3 +59,13 @@ http://www.raywenderlich.com/73286/top-5-ios-7-animations
 ### Credits
 
 [Filter designed by Niels Gesquiere from the Noun Project](http://www.thenounproject.com/megapixl/)
+
+## Personal Notes
+
+* Learned about best practices with self.property versus _property
+* Learned about the shared manager design pattern
+* Discovered some SWEET Pods (listed below)
+* Need to look into setting an icon image more closely for NavBar Button Items
+* Focus on one feature at a time
+* Research best practices and design patterns
+* Start the HW even earlier
