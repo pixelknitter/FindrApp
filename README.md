@@ -42,22 +42,30 @@ Forgot to walkthrough some of the bonuses I had added in the walkthrough, there 
 
 ### Pods
 
-* AFNetworking
-* BDBOAuth1Manager
-* MBProgressHUD
-* POP **(Didn't Use)**
-* TSMessages
+* [AFNetworking](https://github.com/AFNetworking/AFNetworking)
+* [BDBOAuth1Manager](https://github.com/bdbergeron/BDBOAuth1Manager)
+* [MBProgressHUD](https://github.com/jdg/MBProgressHUD)
+* [POP](https://github.com/facebook/pop) **(Didn't Use)**
+* [LBBlurredImage](https://github.com/lukabernardi/LBBlurredImage) **(Didn't Use)**
+* [TSMessages](https://github.com/toursprung/TSMessages)
 
 ### APIs
 
-Yelp API
+[Yelp Search API](http://www.yelp.com/developers/documentation/v2/search_api)
 
 ### Further Reading
 
-http://www.raywenderlich.com/55384/ios-7-best-practices-part-1
-http://www.yelp.com/developers/documentation/v2/search_api
-http://www.raywenderlich.com/5478/uiview-animation-tutorial-practical-recipes
-http://www.raywenderlich.com/73286/top-5-ios-7-animations
+* http://www.raywenderlich.com/55384/ios-7-best-practices-part-1
+* http://www.yelp.com/developers/documentation/v2/search_api
+* http://www.raywenderlich.com/5478/uiview-animation-tutorial-practical-recipes
+* http://www.raywenderlich.com/73286/top-5-ios-7-animations
+* https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/Reference/UIScrollView.html#//apple_ref/occ/instm/UIScrollView/scrollRectToVisible:animated:
+* http://locassa.com/animate-uitableview-cell-height-change/
+* http://horseshoe7.wordpress.com/2013/05/26/hands-on-with-the-mantle-model-framework/
+
+### Tools
+
+* http://www.hurl.it/
 
 ### Credits
 
