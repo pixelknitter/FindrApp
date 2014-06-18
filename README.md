@@ -62,6 +62,8 @@ Forgot to walkthrough some of the bonuses I had added in the walkthrough, there 
 * https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIScrollView_Class/Reference/UIScrollView.html#//apple_ref/occ/instm/UIScrollView/scrollRectToVisible:animated:
 * http://locassa.com/animate-uitableview-cell-height-change/
 * http://horseshoe7.wordpress.com/2013/05/26/hands-on-with-the-mantle-model-framework/
+* https://github.com/thecodepath/ios_guides/wiki/Basic-View-Properties
+* https://github.com/thecodepath/ios_guides/wiki/Adding-Image-Assets
 
 ### Tools
 
