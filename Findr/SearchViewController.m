@@ -60,11 +60,10 @@ CGFloat inset = 15.f;
 {
   [super viewDidLoad];
   
-//  CGRect viewRect = self.view.frame;
-//  viewRect.size.height = 44;
-  
   // Add Filter Button
-  self.filterButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(selectFilter:)];
+  self.filterButton = [[UIBarButtonItem alloc] initWithTitle:@"Filter" style:UIBarButtonItemStylePlain target:self action:@selector(selectFilter:)];
+  
+  // TODO couldn't get this working.
 //  self.filterButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"FilterIcon"] style:UIBarButtonItemStylePlain target:self action:@selector(selectFilter:)];
   
   self.navigationItem.leftBarButtonItem = self.filterButton;
@@ -83,9 +82,10 @@ CGFloat inset = 15.f;
   
   self.searchBar.delegate = self;
   
-  NSString *startText = @"Thai";
-  self.searchBar.text = startText;
-  [self fetchData];
+  [TSMessage showNotificationInViewController:self title:@"Findr" subtitle:@"Search Above" type:TSMessageNotificationTypeMessage duration:1.f];
+//  NSString *startText = @"Thai";
+//  self.searchBar.text = startText;
+//  [self fetchData];
   // Set Up Table View
   
   self.tableView.dataSource = self;
@@ -95,12 +95,6 @@ CGFloat inset = 15.f;
   [self.tableView registerNib:cellNib forCellReuseIdentifier:@"PlaceCell"];
   
   self.stubCell = [cellNib instantiateWithOwner:nil options:nil][0];
-  
-  // Uncomment the following line to preserve selection between presentations.
-  // self.clearsSelectionOnViewWillAppear = NO;
-  
-  // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-  // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -143,9 +137,9 @@ CGFloat inset = 15.f;
   return size.height + 1;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-  return UITableViewAutomaticDimension;
-}
+//- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//  return UITableViewAutomaticDimension;
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -225,33 +219,39 @@ CGFloat inset = 15.f;
   [[YelpManager sharedManager] searchWithTerm:self.searchBar.text filters:NO success:^(AFHTTPRequestOperation *operation, id response) {
     self.places = [Restaraunt placesWithArray:response[@"businesses"]];
 //    NSLog(@"%@", response);
-    
+    if(![self.places count]) { // If no length
+      [TSMessage showNotificationInViewController:self
+                                            title:@"Oops, No Data!"
+                                            subtitle:@"Try refining your search..."
+                                            type:TSMessageNotificationTypeWarning
+                                            duration:1.f];
+    }
     [self.tableView reloadData];
-    // Go back to Top of TableView
-    [self.tableView scrollRectToVisible:CGRectMake(0, 0, self.tableView.frame.size.width, 10) animated:YES];
     // hide HUD
     [MBProgressHUD hideHUDForView:self.view animated:YES];
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     NSLog(@"error: %@", [error description]);
     // Add Network Error
-    [TSMessage showNotificationWithTitle:@"Network Error!"
-                                subtitle:@"Please try again in a few..."
-                                    type:TSMessageNotificationTypeError];
+    [TSMessage showNotificationInViewController:self
+                                          title:@"Network Error!"
+                                       subtitle:@"Please try again in a few..."
+                                           type:TSMessageNotificationTypeError
+                                       duration:1.f];
     
 //    [TSMessage showNotificationInViewController:<#(UIViewController *)#> title:<#(NSString *)#> subtitle:<#(NSString *)#> image:<#(UIImage *)#> type:<#(TSMessageNotificationType)#> duration:<#(NSTimeInterval)#> callback:<#^(void)callback#> buttonTitle:@"Again" buttonCallback:^{
 //    }atPosition:TSMessageNotificationPositionTop canBeDismissedByUser:YES]
     self.searchBar.hidden = YES;
     [MBProgressHUD hideHUDForView:self.view animated:YES];
   }];
+  
+  // Go back to Top of TableView
+  [self.tableView scrollRectToVisible:CGRectMake(0, 0, self.tableView.frame.size.width, 10) animated:NO];
 }
 
 #pragma mark - Button Selectors
 
 - (void)selectFilter:(id)sender {
   FilterViewController *filterViewController = [[FilterViewController alloc] initWithNibName:nil bundle:nil];
-  
-//  filterViewController.client = self.client;
-//  filterViewController.searchText = self.searchBar.text;
   
   [self.navigationController pushViewController:filterViewController animated:YES];
 }

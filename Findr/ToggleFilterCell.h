@@ -11,7 +11,8 @@
 
 @interface ToggleFilterCell : UITableViewCell
 
-//-(void)setFilter:(Filter *)filter;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UISwitch *toggleSwitch;
 
 @property (nonatomic, strong) Filter *filter;
 

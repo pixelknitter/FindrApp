@@ -98,8 +98,13 @@
     return cell;
   } else {
     ToggleFilterCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FilterCell" forIndexPath:indexPath];
+    if (!filterGroup.hasMany && filterGroup.isExpandable) {
+      cell.toggleSwitch.hidden = YES;
+    }
+    
     Filter *filter = filterGroup.filters[currentRow];
     cell.filter = filter;
+    
     return cell;
   }
   
@@ -130,6 +135,21 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   FilterGroup *filterGroup = [[YelpManager sharedManager] getFilterGroupForSection:indexPath.section];
   
+  if ([[tableView cellForRowAtIndexPath:indexPath] isMemberOfClass:[ToggleFilterCell class]]) {
+    ToggleFilterCell *cell = (ToggleFilterCell*)[tableView cellForRowAtIndexPath:indexPath];
+    if(!cell.toggleSwitch.hidden) {
+      [cell.toggleSwitch setOn:cell.filter.enabled animated:YES];
+    } else {
+      [cell.toggleSwitch setOn:cell.filter.enabled animated:NO];
+    }
+    if(!filterGroup.isCollapsed) {
+      filterGroup.selectedRow = indexPath.row;
+    }
+    cell.filter.enabled = !cell.filter.enabled;
+
+    NSLog(@"%@ - %d", cell.filter.label, cell.filter.enabled);
+  }
+  
   [filterGroup toggleCollapsed:indexPath.row];
   [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
@@ -139,7 +159,6 @@
 - (void)searchWithFilters:(id)sender {
   [self.navigationController popViewControllerAnimated:YES];
   [YelpManager sharedManager].updateFilters = YES;
-//  [YelpManager sharedManager] setFilters:];
 }
 
 @end
