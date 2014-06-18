@@ -13,9 +13,9 @@ Time spent: XX hours spent in total
 
 ### Required:
 #### Search Results Page
-* [ ] Table rows should be dynamic height according to the content height
-* [ ] Custom cells should have the proper Auto Layout constraints
-* [ ] Search bar should be in the navigation bar (doesn't have to expand to show location like the real Yelp app does).
+* [x] Table rows should be dynamic height according to the content height
+* [x] Custom cells should have the proper Auto Layout constraints
+* [x] Search bar should be in the navigation bar (doesn't have to expand to show location like the real Yelp app does).
 
 #### Filter page
 ##### (Unfortunately, not all the filters are supported in the Yelp API)

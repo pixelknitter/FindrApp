@@ -39,8 +39,8 @@
   return self.filters[self.selectedRow];
 }
 
-- (int)displayRowsWhenCollapsed {
-  int rows = self.rowsWhenCollapsed;
+- (NSInteger)displayRowsWhenCollapsed {
+  NSInteger rows = self.rowsWhenCollapsed;
   if (self.hasMany) {
     rows += 1;
   }

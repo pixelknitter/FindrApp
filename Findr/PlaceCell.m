@@ -17,17 +17,6 @@
 - (void)awakeFromNib
 {
   // Initialization code
-  [self.placeNameLabel setNumberOfLines:0];
-  [self.placeNameLabel sizeToFit];
-  
-  [self.reviewCountLabel setNumberOfLines:0];
-  [self.reviewCountLabel sizeToFit];
-  
-  [self.categoriesLabel setNumberOfLines:0];
-  [self.categoriesLabel sizeToFit];
-  
-  [self.addressLabel setNumberOfLines:0];
-  [self.addressLabel sizeToFit];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

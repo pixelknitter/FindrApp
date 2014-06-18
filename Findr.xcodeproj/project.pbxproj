@@ -35,6 +35,8 @@
 		2CC8FC0F1950CABB00014013 /* Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC8FC0E1950CABB00014013 /* Filter.m */; };
 		2CC8FC121950CD8100014013 /* FilterGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC8FC111950CD8100014013 /* FilterGroup.m */; };
 		2CC8FC151950D81400014013 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC8FC141950D81400014013 /* Utils.m */; };
+		2CC8FC1A1951246900014013 /* SeeAllTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC8FC181951246900014013 /* SeeAllTableViewCell.m */; };
+		2CC8FC1B1951246900014013 /* SeeAllTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC8FC191951246900014013 /* SeeAllTableViewCell.xib */; };
 		33A57510B4AC480F86A963FA /* libPods-Findr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF8B9C47FCD40E086B3DD2D /* libPods-Findr.a */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +95,9 @@
 		2CC8FC111950CD8100014013 /* FilterGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterGroup.m; sourceTree = "<group>"; };
 		2CC8FC131950D81400014013 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		2CC8FC141950D81400014013 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		2CC8FC171951246900014013 /* SeeAllTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeeAllTableViewCell.h; sourceTree = "<group>"; };
+		2CC8FC181951246900014013 /* SeeAllTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeeAllTableViewCell.m; sourceTree = "<group>"; };
+		2CC8FC191951246900014013 /* SeeAllTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeeAllTableViewCell.xib; sourceTree = "<group>"; };
 		A0F443A51F4C47F093DA38D1 /* Pods-Findr.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Findr.xcconfig"; path = "Pods/Pods-Findr.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -225,14 +230,8 @@
 		2CC8FBD5194BC54800014013 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2CC8FC131950D81400014013 /* Utils.h */,
-				2CC8FC141950D81400014013 /* Utils.m */,
 				2CC8FBF5194BF0DB00014013 /* Restaraunt.h */,
 				2CC8FBF6194BF0DB00014013 /* Restaraunt.m */,
-				2CC8FC0D1950CABB00014013 /* Filter.h */,
-				2CC8FC0E1950CABB00014013 /* Filter.m */,
-				2CC8FC101950CD8100014013 /* FilterGroup.h */,
-				2CC8FC111950CD8100014013 /* FilterGroup.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -246,6 +245,9 @@
 				2CC8FC04194F738B00014013 /* ToggleFilterCell.h */,
 				2CC8FC05194F738B00014013 /* ToggleFilterCell.m */,
 				2CC8FC06194F738B00014013 /* ToggleFilterCell.xib */,
+				2CC8FC171951246900014013 /* SeeAllTableViewCell.h */,
+				2CC8FC181951246900014013 /* SeeAllTableViewCell.m */,
+				2CC8FC191951246900014013 /* SeeAllTableViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -253,11 +255,25 @@
 		2CC8FC091950088700014013 /* Yelp */ = {
 			isa = PBXGroup;
 			children = (
+				2CC8FC131950D81400014013 /* Utils.h */,
+				2CC8FC141950D81400014013 /* Utils.m */,
 				2CC8FBD3194BC53400014013 /* API */,
 				2CC8FC0A195008A700014013 /* YelpManager.h */,
 				2CC8FC0B195008A700014013 /* YelpManager.m */,
+				2CC8FC161951212500014013 /* Filters */,
 			);
 			name = Yelp;
+			sourceTree = "<group>";
+		};
+		2CC8FC161951212500014013 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				2CC8FC0D1950CABB00014013 /* Filter.h */,
+				2CC8FC0E1950CABB00014013 /* Filter.m */,
+				2CC8FC101950CD8100014013 /* FilterGroup.h */,
+				2CC8FC111950CD8100014013 /* FilterGroup.m */,
+			);
+			name = Filters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CC8FC08194F738B00014013 /* ToggleFilterCell.xib in Resources */,
+				2CC8FC1B1951246900014013 /* SeeAllTableViewCell.xib in Resources */,
 				2CC8FBAC194BC51800014013 /* InfoPlist.strings in Resources */,
 				2CC8FBB4194BC51800014013 /* Images.xcassets in Resources */,
 				2CC8FBEE194BD28200014013 /* FilterViewController.xib in Resources */,
@@ -408,6 +425,7 @@
 				2CC8FBF3194BD2B600014013 /* RestaurantViewController.m in Sources */,
 				2CC8FBE8194BD27200014013 /* SearchViewController.m in Sources */,
 				2CC8FBD2194BC52D00014013 /* YelpClient.m in Sources */,
+				2CC8FC1A1951246900014013 /* SeeAllTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

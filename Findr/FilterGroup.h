@@ -25,6 +25,6 @@
 
 - (void)toggleCollapsed:(int)selectedRow;
 - (Filter *)getCurrentSelection;
-- (int)displayRowsWhenCollapsed;
+- (NSInteger)displayRowsWhenCollapsed;
 
 @end

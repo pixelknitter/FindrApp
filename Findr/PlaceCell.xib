@@ -25,8 +25,8 @@
                         <rect key="frame" x="92" y="10" width="243" height="84"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Name" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="ESc-38-qco">
-                                <rect key="frame" x="5" y="0.0" width="38" height="17"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="253" text="Name" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="210" translatesAutoresizingMaskIntoConstraints="NO" id="ESc-38-qco">
+                                <rect key="frame" x="5" y="0.0" width="210" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -47,20 +47,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviews" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cm0-jP-wEh">
-                                <rect key="frame" x="85" y="23" width="47" height="15"/>
+                                <rect key="frame" x="85" y="23" width="148" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Address" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnU-hh-ns0">
-                                <rect key="frame" x="5" y="48" width="46" height="15"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Address" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="228" translatesAutoresizingMaskIntoConstraints="NO" id="AnU-hh-ns0">
+                                <rect key="frame" x="5" y="48" width="228" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aY0-gO-AKO">
-                                <rect key="frame" x="5" y="68" width="61" height="16"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" preferredMaxLayoutWidth="228" translatesAutoresizingMaskIntoConstraints="NO" id="aY0-gO-AKO">
+                                <rect key="frame" x="5" y="68" width="228" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -74,11 +74,14 @@
                             <constraint firstAttribute="bottom" secondItem="aY0-gO-AKO" secondAttribute="bottom" id="DBg-cP-CzS"/>
                             <constraint firstItem="ESc-38-qco" firstAttribute="top" secondItem="XEs-Vt-r9p" secondAttribute="top" id="EKj-GS-Idf"/>
                             <constraint firstItem="Cm0-jP-wEh" firstAttribute="leading" secondItem="gG7-ZT-8tb" secondAttribute="trailing" constant="10" id="Fc9-lS-W5L"/>
+                            <constraint firstAttribute="trailing" secondItem="aY0-gO-AKO" secondAttribute="trailing" constant="10" id="IEn-bX-17R"/>
                             <constraint firstItem="aY0-gO-AKO" firstAttribute="top" secondItem="AnU-hh-ns0" secondAttribute="bottom" constant="5" id="T8X-3h-ZhE"/>
+                            <constraint firstAttribute="trailing" secondItem="AnU-hh-ns0" secondAttribute="trailing" constant="10" id="UoM-gn-O6a"/>
+                            <constraint firstAttribute="trailing" secondItem="ESc-38-qco" secondAttribute="trailing" constant="28" id="VIq-AM-X8P"/>
                             <constraint firstItem="AnU-hh-ns0" firstAttribute="leading" secondItem="XEs-Vt-r9p" secondAttribute="leading" constant="5" id="ZLw-px-krG"/>
                             <constraint firstItem="gG7-ZT-8tb" firstAttribute="top" secondItem="ESc-38-qco" secondAttribute="bottom" constant="5" id="aUY-92-hFd"/>
                             <constraint firstItem="aY0-gO-AKO" firstAttribute="leading" secondItem="XEs-Vt-r9p" secondAttribute="leading" constant="5" id="bTM-kT-dQ5"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Cm0-jP-wEh" secondAttribute="trailing" constant="70" id="cWP-Mh-beb"/>
+                            <constraint firstAttribute="trailing" secondItem="Cm0-jP-wEh" secondAttribute="trailing" constant="10" id="cWP-Mh-beb"/>
                             <constraint firstItem="AnU-hh-ns0" firstAttribute="top" secondItem="Cm0-jP-wEh" secondAttribute="bottom" constant="10" id="oKB-IM-8uj"/>
                             <constraint firstItem="v10-Gc-HeC" firstAttribute="top" secondItem="XEs-Vt-r9p" secondAttribute="top" id="qBF-17-tYu"/>
                             <constraint firstItem="ESc-38-qco" firstAttribute="leading" secondItem="XEs-Vt-r9p" secondAttribute="leading" constant="5" id="vjJ-Cw-jwy"/>

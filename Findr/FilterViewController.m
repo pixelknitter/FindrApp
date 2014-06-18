@@ -10,10 +10,15 @@
 #import "YelpManager.h"
 #import "FilterGroup.h"
 #import "Filter.h"
+#import "SeeAllTableViewCell.h"
+#import "ToggleFilterCell.h"
 
 @interface FilterViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *filterView;
+@property (strong, nonatomic) UIBarButtonItem *searchButton;
+
+- (void)searchWithFilters:(id)sender;
 
 @end
 
@@ -33,9 +38,20 @@
 {
   [super viewDidLoad];
   
+  // Add Search Button
+  self.searchButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(searchWithFilters:)];
+  //  self.filterButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"FilterIcon"] style:UIBarButtonItemStylePlain target:self action:@selector(selectFilter:)];
+  
+  self.navigationItem.rightBarButtonItem = self.searchButton;
+  
   self.title = @"Filters";
   self.tableView.dataSource = self;
   self.tableView.delegate = self;
+  
+  UINib *filterCellNib = [UINib nibWithNibName:@"ToggleFilterCell" bundle:nil];
+  [self.tableView registerNib:filterCellNib forCellReuseIdentifier:@"FilterCell"];
+  UINib *seeAllNib = [UINib nibWithNibName:@"SeeAllTableViewCell" bundle:nil];
+  [self.tableView registerNib:seeAllNib forCellReuseIdentifier:@"SeeAllCell"];
   
   // Uncomment the following line to preserve selection between presentations.
   self.clearsSelectionOnViewWillAppear = NO;
@@ -69,9 +85,8 @@
   
   UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
   
-  // XXX clean this up so the filter value can export a view or something
   FilterGroup *filterGroup = [[YelpManager sharedManager] getFilterGroupForSection:indexPath.section];
-  NSInteger currentRow;
+  int currentRow;
   if (filterGroup.isCollapsed && !(filterGroup.hasMany)) {
     currentRow = filterGroup.selectedRow;
   } else {
@@ -79,10 +94,13 @@
   }
   
   if (filterGroup.isCollapsed && filterGroup.hasMany && (currentRow > (filterGroup.rowsWhenCollapsed - 1))) {
-    cell.textLabel.text = @"See All";
+    SeeAllTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SeeAllCell"];
+    return cell;
   } else {
-    Filter *filterValue = filterGroup.filters[currentRow];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", filterValue.label];
+    ToggleFilterCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FilterCell" forIndexPath:indexPath];
+    Filter *filter = filterGroup.filters[currentRow];
+    cell.filter = filter;
+    return cell;
   }
   
   return cell;
@@ -106,7 +124,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-  return 44.f;
+  return 30.f;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -114,6 +132,14 @@
   
   [filterGroup toggleCollapsed:indexPath.row];
   [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+#pragma mark - Search
+
+- (void)searchWithFilters:(id)sender {
+  [self.navigationController popViewControllerAnimated:YES];
+  [YelpManager sharedManager].updateFilters = YES;
+//  [YelpManager sharedManager] setFilters:];
 }
 
 @end

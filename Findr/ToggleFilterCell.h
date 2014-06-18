@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Filter.h"
 
 @interface ToggleFilterCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UISwitch *toggleSwitch;
+
+//-(void)setFilter:(Filter *)filter;
+
+@property (nonatomic, strong) Filter *filter;
 
 @end
