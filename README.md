@@ -31,9 +31,12 @@ Time spent: 20 hours spent in total
 
 Walkthrough of all user stories:
 
-![Video Walkthrough]()
+![Video Walkthrough](https://raw.githubusercontent.com/NinjaSudo/FindrApp/master/demo_findr.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
+**Note**
+Forgot to walkthrough some of the bonuses I had added in the walkthrough, there is a network error message as well as a no data message when the filters/search comes up empty.
 
 ## Resources Used
 
