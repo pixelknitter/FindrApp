@@ -7,16 +7,30 @@
 //
 
 #import "AppDelegate.h"
+#import "SearchViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    return YES;
+  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  // Override point for customization after application launch.
+  
+//  UIColor *yellow = [UIColor colorWithRed:241.0f/255.0f green:196.0f/255.0f blue:15.0f/255.0f alpha:1];
+  
+  [[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
+  [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
+  [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor yellowColor], NSForegroundColorAttributeName, nil]];
+  [[UINavigationBar appearance] setBarStyle:UIStatusBarStyleLightContent];
+  
+  SearchViewController *vc = [[SearchViewController alloc] init];
+  UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
+  
+  self.window.rootViewController = nvc;
+  
+  self.window.backgroundColor = [UIColor whiteColor];
+  [self.window makeKeyAndVisible];
+  return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

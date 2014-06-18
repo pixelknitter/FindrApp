@@ -6,6 +6,9 @@ target "Findr" do
 pod 'AFNetworking'
 pod 'BDBOAuth1Manager'
 pod 'Mantle'
+pod 'MBProgressHUD'
+pod 'pop', '~> 1.0'
+pod 'TSMessages'
 
 end
 
